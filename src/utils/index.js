@@ -1,7 +1,7 @@
 // @flow
-'use strict';
 
 import normalizePort from './normalizePort';
+import autoLoadRoutes from './autoLoadRoutes';
 import { createApi, createRoute } from './controller';
 
-export { normalizePort, createApi, createRoute };
+export { normalizePort, createApi, createRoute, autoLoadRoutes };
