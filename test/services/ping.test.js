@@ -1,7 +1,6 @@
-import chai from 'chai';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
-import { server } from '../../build';
+import { server } from '../../build/server';
 
 chai.use(chaiHttp);
 
@@ -14,6 +13,6 @@ describe('GET /ping route', function() {
         expect(res).to.have.status(200);
         expect(res.body.status).to.be.equal('success');
         done();
-      })
+      });
   });
 });
