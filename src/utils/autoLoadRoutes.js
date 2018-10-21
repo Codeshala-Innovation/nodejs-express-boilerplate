@@ -7,7 +7,10 @@ export default (app: Object) => {
     folders.forEach(folder => {
       fs.readdir(path.resolve(__dirname, '../services', folder), function (err, files) {
         const requiredFiles = files.filter(file => file.match(/.routes.js$/));
-        requiredFiles.forEach(file => require(path.resolve(__dirname, '../services', folder, file)).default(app));
+        requiredFiles.forEach(file => {
+          const filePath: string = path.resolve(__dirname, '../services', folder, file);
+          require(filePath).default(app);
+        });
       });
     });
   });
