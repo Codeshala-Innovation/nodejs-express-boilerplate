@@ -9,7 +9,7 @@
     "build:watch": "gulp",
     "build": "gulp flow scripts json",
     "start": "yarn build && node -r dotenv/config build/server.js",
-    "test": "yarn build && nyc mocha -r dotenv/config --compilers js:babel-core/register test/**/*.js",
+    "test": "yarn build && nyc mocha -r dotenv/config --compilers js:babel-core/register test/**/*.test.js",
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "dependencies": {
