@@ -1,5 +1,4 @@
 // @flow
-'use strict';
 
 const DEFAULT_PORT: number = 3000;
 

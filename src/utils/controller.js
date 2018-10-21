@@ -1,5 +1,5 @@
 // @flow
-'use strict';
+
 import express from 'express';
 
 // We use http Restful API convention
