@@ -1,0 +1,48 @@
+{
+  "name": "hacker-bay-week-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Tolsee/hacker-bay-week-2.git",
+  "author": "Tolsee <tolsee3@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:watch": "gulp",
+    "build": "gulp flow scripts json",
+    "start": "yarn build && node -r dotenv/config build/index.js",
+    "test": "yarn build && nyc mocha -r dotenv/config --compilers js:babel-core/register test/**/*.js",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "dependencies": {
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "jsonwebtoken": "^8.3.0",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "password-hash": "^1.2.2",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "rotating-file-stream": "^1.3.6",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "codecov": "^3.0.2",
+    "flow-bin": "^0.74.0",
+    "gulp-flowtype": "^1.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
+  }
+}

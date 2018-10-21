@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - "stable"
+install:
+  - npm install -g codecov
+  - npm install -g gulp-cli
+  - npm install -g sequelize-cli
+  - npm install
+services:
+  - postgresql
+env:
+  global:
+    - NODE_ENV=test
+    - PORT=8000
+    - JWT_SECRET=verysecretkey&*()=%
+before_script:
+  - cd ./src/app && sequelize db:create
+  - sequelize db:migrate
+  - cd ../..
+script:
+  - npm run test
+  - npm run report-coverage
+
+
