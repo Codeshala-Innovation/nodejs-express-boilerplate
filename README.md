@@ -1,21 +1,18 @@
-[![Build Status](https://travis-ci.org/Tolsee/hacker-bay-week-6.svg?branch=master)](https://travis-ci.org/Tolsee/hacker-bay-week-3)  [![codecov](https://codecov.io/gh/Tolsee/hacker-bay-week-6/branch/master/graph/badge.svg)](https://codecov.io/gh/Tolsee/hacker-bay-week-3)
-# hacker-bay-week-3
-This repository serves as a weekly task of hackerbay university.
+# NodeJS Boilerplate
 
-## Installation
+NodeJS starter project started by codeShala, Nepal. Please free to contribute.
 
-`yarn install`
+## Technology Used 
 
-`npm install`
+* Express
+* Flow.js
+* MongoDB
 
-## Running
+## Running starter project
 
-`yarn start`
+```
+npm install
+npm start
+``` 
 
-`npm run start`
 
-## Test
-
-`yarn test`
-
-`npm run test`
