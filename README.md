@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Codeshala-Innovation/nodejs-express-boilerplate.svg?branch=master)](https://travis-ci.org/Codeshala-Innovation/nodejs-express-boilerplate)
+
 # NodeJS Boilerplate
 
 NodeJS starter project started by codeShala, Nepal. Please free to contribute.
