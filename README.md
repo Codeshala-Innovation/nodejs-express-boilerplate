@@ -6,9 +6,11 @@ NodeJS starter project started by codeShala, Nepal. Please free to contribute.
 
 ## Technology Used 
 
-* Express
-* Flow.js
-* MongoDB
+* flow.js --  Static Type checking
+* express
+* mongoose
+* migrate-mongo --  Database migration
+
 
 ## Running starter project
 
@@ -16,5 +18,31 @@ NodeJS starter project started by codeShala, Nepal. Please free to contribute.
 npm install
 npm start
 ``` 
+
+## Migration script
+
+**Install** 
+```
+npm install -g migrate-mongo
+```
+
+**Status**
+```
+migrate-mongo status
+```
+
+**Migrate**
+```
+migrate-mongo up
+```
+
+## Folder Structure
+
+**config:** All config information.
+
+**test:** Unit test folder  
+
+**migrations:** Database migration
+
 
 
