@@ -6,7 +6,8 @@ const connectDataBase = (dbConfig: Object) => {
   mongoose.connect(dbConfig.url, {
     dbName: dbConfig.name,
     user: dbConfig.username,
-    pass: dbConfig.password
+    pass: dbConfig.password,
+    useNewUrlParser: true
   });
 
   mongoose.Promise = global.Promise;

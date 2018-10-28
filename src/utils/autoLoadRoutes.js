@@ -2,16 +2,38 @@
 import * as fs from 'fs';
 import path from 'path';
 
-export default (app: Object) => {
-  fs.readdir(path.resolve(__dirname, '../services'), function (err, folders) {
+export const findRoutes = (directory: string, callback) => {
+  fs.readdir(path.resolve(directory), function (err, folders) {
+    if (err) return callback(err);
+
+    let asyncCount = 0;
+    let routes = [];
     folders.forEach(folder => {
-      fs.readdir(path.resolve(__dirname, '../services', folder), function (err, files) {
-        const requiredFiles = files.filter(file => file.match(/.routes.js$/));
-        requiredFiles.forEach(file => {
-          const filePath: string = path.resolve(__dirname, '../services', folder, file);
-          require(filePath).default(app);
+      if (fs.lstatSync(path.resolve(directory, folder)).isDirectory()) {
+        fs.readdir(path.resolve(directory, folder), function (err, files) {
+          if (err) return callback(err);
+
+          const requiredFiles = files
+            .filter(file => file.match(/.routes.js$/))
+            .map(file => path.resolve(directory, folder, file));
+          routes = [...routes, ...requiredFiles];
+
+          asyncCount++;
+          if (asyncCount === folders.length) return callback(null, routes);
         });
-      });
+      } else {
+        asyncCount++;
+        if (asyncCount === folders.length) return callback(null, routes);
+      }
+    });
+  });
+};
+
+export default (app: Object) => (directory: string) => {
+  findRoutes(directory, (err, files) => {
+    if (err) throw err;
+    files.forEach(file => {
+      require(file).default(app);
     });
   });
 };

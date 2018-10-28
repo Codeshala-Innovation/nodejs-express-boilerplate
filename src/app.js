@@ -48,6 +48,6 @@ app.use(logger);
 
 
 // Load routes
-autoLoadRoutes(app);
+autoLoadRoutes(app)(path.resolve(__dirname, 'services'));
 
 export { app };

@@ -8,7 +8,7 @@
     "build:watch": "gulp",
     "build": "gulp flow scripts json",
     "start": "yarn build && node -r dotenv/config build/server.js",
-    "test": "nyc mocha -r dotenv/config --compilers js:babel-core/register test/**/*.test.js",
+    "test": "nyc mocha -r dotenv/config --require babel-core/register \"test/**/*.test.js\"",
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "dependencies": {
@@ -40,6 +40,7 @@
     "gulp-flowtype": "^1.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
+    "mock-fs": "^4.7.0",
     "nyc": "^12.0.2"
   },
   "nyc": {
