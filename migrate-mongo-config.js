@@ -1,5 +1,5 @@
 // In this file you can configure migrate-mongo
-import config from 'config';
+import config from 'src/config';
 
 const creatDBUrl = (config: Object) => {
   if (!config.username && config.password) {

@@ -45,22 +45,22 @@ export default () => {
   }));
 
   passport.use('login', new LocalStrategy({
-      usernameField: 'email',
-      passwordField: 'password'
-    }, function (email, password, cb) {
-      return User.findOne({ where: { email } })
-        .then(user => {
-          if (!user) {
-            return cb(null, false, {error: 'User does not exist.'});
-          }
+    usernameField: 'email',
+    passwordField: 'password'
+  }, function (email, password, cb) {
+    return User.findOne({ where: { email } })
+      .then(user => {
+        if (!user) {
+          return cb(null, false, {error: 'User does not exist.'});
+        }
 
-          if(passwordHash.verify(password, user.dataValues.password)) {
-            return cb(null, user.dataValues);
-          } else {
-            return cb(null, false, {error: 'Invalid Password.'});
-          }
-        })
-        .catch(err => cb(err));
+        if(passwordHash.verify(password, user.dataValues.password)) {
+          return cb(null, user.dataValues);
+        } else {
+          return cb(null, false, {error: 'Invalid Password.'});
+        }
+      })
+      .catch(err => cb(err));
   }));
 
   passport.use('auth-check', new JWTStrategy({

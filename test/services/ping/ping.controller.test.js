@@ -1,6 +1,6 @@
 import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
-import { server } from '../../build/server';
+import { server } from '../../../src/server';
 
 chai.use(chaiHttp);
 

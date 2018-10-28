@@ -14,21 +14,7 @@ const UserSchema = new Schema({
   resetToken: [ { type: String } ],
   created_at: Date,
   updated_at: Date
-});
-
-// Todo
-// Make a utility that adds created_at and update_at time and employ that to every schema
-
-// Add created_at and updated_at before save operation
-UserSchema.pre('save', function(next){
-  const currentTime 	= new Date();
-
-  this.updated_at 	= currentTime;
-
-  if (!this.created_at) { this.created_at = currentTime }
-
-  next();
-});
+}, { timestamps: true });
 
 UserSchema.methods.hashPassword = function() {
   this.password = passwordHash.generate(this.password)

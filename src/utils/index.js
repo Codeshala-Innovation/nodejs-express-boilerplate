@@ -2,6 +2,6 @@
 
 import normalizePort from './normalizePort';
 import autoLoadRoutes from './autoLoadRoutes';
-import { createApi, createRoute } from './controller';
+import connectDatabase from './db';
 
-export { normalizePort, createApi, createRoute, autoLoadRoutes };
+export { normalizePort, autoLoadRoutes, connectDatabase };

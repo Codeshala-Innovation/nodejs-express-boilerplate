@@ -1,5 +1,5 @@
 // @flow
-import db from 'db';
+import db from './db';
 
 // Todo
 // Check if the env are environments are valid
