@@ -54,6 +54,4 @@ describe('User model', () => {
         user.remove();
       });
   });
-
-
 });

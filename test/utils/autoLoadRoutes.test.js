@@ -18,7 +18,7 @@ describe('Autoload routes', () => {
     mock.restore();
   });
 
-  it('Find all the route file', done => {
+  it('should find all the route file', done => {
     findRoutes('services', (err, files) => {
       if (err) {
         expect(false, err.message);
