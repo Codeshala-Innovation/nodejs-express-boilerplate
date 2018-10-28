@@ -8,7 +8,6 @@ const Schema = mongoose.Schema;
 // Create the user Schema
 const UserSchema = new Schema({
   email: { type: String, required: true, unique: true },
-  username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   token: [ { type: String } ],
   resetToken: [ { type: String } ],
@@ -21,6 +20,6 @@ UserSchema.methods.hashPassword = function() {
 };
 
 // create the model to export
-const userModel = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
-export default userModel;
+export default User;

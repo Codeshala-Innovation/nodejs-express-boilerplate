@@ -4,7 +4,7 @@ import { connectDatabase } from '../../src/utils';
 import config from '../../src/config/db';
 
 describe('Database test', () => {
-  it('Connects to Database successfully', done => {
+  it('should connect to database', done => {
     const db = connectDatabase(config.test);
 
     db.on('error', err => {
