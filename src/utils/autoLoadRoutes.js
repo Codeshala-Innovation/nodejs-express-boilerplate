@@ -2,7 +2,7 @@
 import * as fs from 'fs';
 import path from 'path';
 
-export const findRoutes = (directory: string, callback) => {
+export const findRoutes = (directory: string, callback: Function) => {
   fs.readdir(path.resolve(directory), function (err, folders) {
     if (err) return callback(err);
 
