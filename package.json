@@ -1,15 +1,14 @@
 {
-  "name": "hacker-bay-week-2",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/Tolsee/hacker-bay-week-2.git",
-  "author": "Tolsee <tolsee3@gmail.com>",
+  "name": "nodejs-express-boilerplate",
+  "version": "0.0.1",
+  "main": "build",
+  "repository": "https://github.com/Codeshala-Innovation/nodejs-express-boilerplate.git",
   "license": "MIT",
   "scripts": {
     "build:watch": "gulp",
     "build": "gulp flow scripts json",
     "start": "yarn build && node -r dotenv/config build/server.js",
-    "test": "yarn build && nyc mocha -r dotenv/config --compilers js:babel-core/register test/**/*.test.js",
+    "test": "nyc mocha -r dotenv/config --compilers js:babel-core/register test/**/*.test.js",
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "dependencies": {
@@ -42,5 +41,11 @@
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.test.js",
+      "build"
+    ]
   }
 }
