@@ -15,8 +15,10 @@ NodeJS starter project started by codeShala, Nepal. Please free to contribute.
 ## Running starter project
 
 ```
-npm install
-npm start
+$ npm install
+$ npm install -g migrate-mongo
+$ migrate-mongo up
+$ npm start
 ``` 
 
 ## Migration script
