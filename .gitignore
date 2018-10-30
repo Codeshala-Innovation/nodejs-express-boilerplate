@@ -66,5 +66,5 @@ typings/
 # build directory
 build/
 
-# let's only use yarn
-package-lock.json
+# let's only use npm
+yarn.lock
