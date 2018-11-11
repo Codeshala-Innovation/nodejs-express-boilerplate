@@ -16,7 +16,7 @@ import rfs from 'rotating-file-stream';
 import morgan from 'morgan';
 import cors from 'cors';
 
-import { autoLoadRoutes } from './utils';
+import { autoLoadRoutes, swaggerLoad } from './utils';
 
 const app = express();
 
@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 
 // Employ passport
 // app.use(passport.initialize());
+swaggerLoad(app, path.resolve(__dirname, '../docs/index.yaml'));
 
 /*
 * Access Logger

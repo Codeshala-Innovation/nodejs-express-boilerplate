@@ -1,0 +1,2 @@
+/ping:
+  $ref: ./ping.yaml
