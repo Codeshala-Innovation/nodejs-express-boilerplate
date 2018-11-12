@@ -1,5 +1,3 @@
 // @flow
 
-export default (app: Object) => {
-
-};
+export default (app: Object) => {};

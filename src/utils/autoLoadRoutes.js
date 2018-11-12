@@ -1,16 +1,16 @@
 // @flow
-import * as fs from 'fs';
-import path from 'path';
+import * as fs from "fs";
+import path from "path";
 
 export const findRoutes = (directory: string, callback: Function) => {
-  fs.readdir(path.resolve(directory), function (err, folders) {
+  fs.readdir(path.resolve(directory), (err, folders) => {
     if (err) return callback(err);
 
     let asyncCount = 0;
     let routes = [];
     folders.forEach(folder => {
       if (fs.lstatSync(path.resolve(directory, folder)).isDirectory()) {
-        fs.readdir(path.resolve(directory, folder), function (err, files) {
+        fs.readdir(path.resolve(directory, folder), (err, files) => {
           if (err) return callback(err);
 
           const requiredFiles = files
