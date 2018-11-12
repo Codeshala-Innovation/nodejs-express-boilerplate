@@ -1,20 +1,28 @@
 // @flow
 
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const connectDataBase = (dbConfig: Object) => {
-  mongoose.connect(dbConfig.url, {
-    dbName: dbConfig.name,
-    user: dbConfig.username,
-    pass: dbConfig.password,
-    useNewUrlParser: true
-  });
+  mongoose.connect(
+    dbConfig.url,
+    {
+      dbName: dbConfig.name,
+      user: dbConfig.username,
+      pass: dbConfig.password,
+      useNewUrlParser: true
+    }
+  );
 
   mongoose.Promise = global.Promise;
 
-  let db = mongoose.connection;
+  const db = mongoose.connection;
 
-  db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+  // Todo
+  // Throw an exception and log error
+  // API won't work if database connection is failed
+
+  // eslint-disable-next-line no-console
+  db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
   return db;
 };
